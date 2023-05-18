@@ -1,0 +1,30 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<div id="profile-view"></div>
+<div id="posts-view">
+    <h2 id="page-title">All Posts</h2>
+    {% if user.is_authenticated %}
+        <div class="post-container" id="new-post">
+            <h4 id="new-post-title">New Post</h4>
+            <form id="new-post-form">
+                {% csrf_token %}
+                <textarea id="new-post-content" required ></textarea>
+                <input id="new-post-submit" class="btn btn-primary" type="submit" value="Post">
+            </form>
+
+        </div>
+    {% endif %}
+    <div id="posts-root"></div>
+</div>
+
+{% endblock %}
+{% block script %}
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="{% static 'network/posts.js' %}" type="text/babel"></script>
+
+{% endblock %}
