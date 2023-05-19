@@ -1,7 +1,7 @@
 # network
 A Twitter-like social network website for making posts and following users. This is a single page application build using React and Django framework.
 
-## LINKS
+## Links
 [Demo Video](https://youtu.be/cgc3r0cDxpc)
 
 [Website](http://akshaykm.pythonanywhere.com/)
